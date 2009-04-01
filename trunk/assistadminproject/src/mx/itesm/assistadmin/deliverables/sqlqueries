@@ -1,0 +1,42 @@
+***INSERTAR ASISTENCIA
+
+INSERT INTO asistencia VALUES('1', CURDATE(), CURTIME(), NULL, '5')	
+
+*** 0: guy is out, 1: is in
+
+SELECT COUNT(*) FROM asistencia 
+WHERE fecha = CURDATE() AND userid = 1 AND horasalida IS NULL
+
+
+*** compute hours
+
+SELECT CONCAT(SUM(HOUR(horasalida) - HOUR(horaentrada)), ':',
+SUM(MINUTE(horasalida) - MINUTE(horaentrada))) AS horas
+FROM asistencia WHERE horasalida IS NOT NULL
+AND userid = 2 AND '2008-04-20' <= fecha AND fecha <= '2008-04-28';
+
+** report by user
+
+SELECT fecha, actividad, horaentrada, horasalida, 
+CONCAT(HOUR(horasalida) - HOUR(horaentrada), ':', 
+MINUTE(horasalida) - MINUTE(horaentrada)) as horas 
+FROM asistencia, actividades 
+WHERE userid = 2 AND actividades.actividadid = asistencia.actividadid 
+ORDER BY fecha DESC, horaentrada DESC
+
+** report by date
+
+SELECT username, fecha, horaentrada, horasalida, actividad 
+FROM assistadmin.asistencia a, assistadmin.actividades ac, 
+assistadmin.users u 
+WHERE a.userid = u.userid AND 
+a.actividadid = ac.actividadid AND 
+fecha = '2008-04-28' 
+ORDER BY fecha DESC, horaentrada DESC
+
+** report by date afa
+SELECT *
+FROM asistencia, users as u
+WHERE fecha = '2008-04-27'
+AND userid = u.userid
+

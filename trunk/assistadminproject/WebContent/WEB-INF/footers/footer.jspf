@@ -1,0 +1,10 @@
+<br><br>
+<hr>
+P&aacute;gina generada el: 
+<jsp:scriptlet>
+java.util.Locale locale = new java.util.Locale("es", "");
+java.text.DateFormat fmt = java.text.DateFormat.getDateTimeInstance(
+		java.text.DateFormat.LONG, java.text.DateFormat.LONG, locale);
+fmt.setTimeZone(java.util.TimeZone.getDefault());
+out.println(fmt.format(new java.util.Date()));
+</jsp:scriptlet>
