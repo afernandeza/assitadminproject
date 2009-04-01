@@ -1,0 +1,82 @@
+/* CSS Document */
+
+table.content, h4, h5, h6, p{
+    font-family:Arial, Helvetica, sans-serif;
+    color:#000000;
+}
+
+div.notification{
+    color:#003399;
+}
+
+table.mainlayout{
+    margin-left:auto;
+    margin-right:auto;
+    text-align:center;
+    width:800px;
+}
+
+td.home{
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:12pt;
+    color:#000000;
+}
+
+body{
+    text-align:center;
+    margin-left:auto;
+    margin-right:auto;
+    font-family:Arial, Helvetica, sans-serif;
+    color:#FFFFFF;
+}
+
+table.center{
+    margin-left:auto;
+    margin-right:auto;
+}
+
+table.header{
+    background-color:#003399;
+    width:800px;
+    border:none;
+}
+
+table.login{
+    width:300px;
+    border:none;
+    margin-left:auto;
+    margin-right:auto;
+    text-align:center;
+    background-color:#B5B5B5;
+    font-weight:bold;
+}
+
+td.footer{
+    text-align:center;
+    font-size:10px;
+    background-color:#003399;
+    width:800px;
+    height:20px;
+}
+
+td.right{
+    text-align:right;
+}
+
+td.left{
+    text-align:left;
+}
+
+table.menubar{
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:14pt;
+    background-color:#D0D0D0;
+    width:800px;
+    color:#000000;
+}
+
+.error{
+    text-align:center;
+    font-family:Arial, Helvetica, sans-serif;
+    color:#000000;
+}
